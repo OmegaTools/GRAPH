@@ -16,7 +16,7 @@
 
 # GRAPH
 
-*Encoder / Decoder for `.graph` files.*
+*Encoder / Decoder for  `.graph` files.*
 
 <br>
 
