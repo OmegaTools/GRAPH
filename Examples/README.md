@@ -1,8 +1,6 @@
 
 <br>
 
-<div align = center>
-
 # Examples
 
 *Working implementations of the*  
