@@ -2,7 +2,9 @@
 import { printify } from './Stringify.js'
 
 
-const { entries } = Object;
+const 
+    { isInteger } = Number ,
+    { entries } = Object ;
 
 
 export default class Node {
@@ -96,12 +98,19 @@ export default class Node {
     
     named ( name ){
         
-        const item = this.item(this.#properties[key]);
+        console.log(name,this.#properties)
         
-        if(item instanceof Node)
-            return item
+        const index = this.#properties[name];
         
-        return item?.value
+        if(isInteger(index)){
+            
+            const item = this.item();
+            
+            if(item instanceof Node)
+                return item
+            
+            return item?.value
+        }
     }
     
     
@@ -129,7 +138,6 @@ export default class Node {
      
     toString (){
         return printify(this);
-
     }
     
     
