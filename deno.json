@@ -1,0 +1,12 @@
+{
+    "importMap" : "Examples/Imports.json" ,
+
+    "tasks": {
+
+        "test-example-writing" : "deno run --watch --allow-write Examples/Writing/App.js" ,
+        "test-example-reading" : "deno run --watch --allow-read  Examples/Reading/App.js" ,
+
+        "example-writing" : "deno run --allow-write Examples/Writing/App.js" ,
+        "example-reading" : "deno run --allow-read  Examples/Reading/App.js"
+    }
+}

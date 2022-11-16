@@ -1,0 +1,4 @@
+
+# Don't commit generated example output
+
+Examples/Writing/*.graph
