@@ -18,7 +18,7 @@ const Tokens = [
 
 export default function parse ( string ){
     
-    const tree = buildAST(parseNumbers(dropUnknown(normalizeStrings(toTokens(string)))));
+    const tree = buildAST(parseNumbers(dropUnknown(normalizeStrings(removeComments(toTokens(string))))));
     
     return Node.from(tree);
 }
@@ -116,6 +116,51 @@ function * toTokens ( string ){
     }
 }
 
+function * removeComments ( tokens ){
+    
+    let depth = 0;
+    
+    let process;
+
+
+    const normal = ( token ) => {
+        
+        const [ type ] = token;
+    
+        if(type === '/*'){
+            process = comment;
+            depth++;
+            return
+        }
+        
+        return token
+    }
+    
+    
+    const comment = ( token ) => {
+        
+        const [ type ] = token;
+        
+        if(type === '*/')
+            depth--;
+            
+        if(depth > 0)
+            return
+            
+        process = normal;
+    }
+    
+    
+    process = normal;
+    
+    for ( const token of tokens ){
+        
+        const value = process(token);
+        
+        if(value)
+            yield value
+    }
+}
 
 function * normalizeStrings ( tokens ){
     
