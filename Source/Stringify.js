@@ -1,4 +1,5 @@
 
+import minify from './Minify.js'
 import Node from './Node.js'
 
     
@@ -59,10 +60,14 @@ function toContent ( node ){
 }
 
 
-export default function ( graph ){
+export default function ( graph , options = {} ){
+    
+    if(options.minify)
+        return minify(graph,options);
+    
     return toContent(graph)
 }
 
-export function printify ( graph ){
+export function printify ( graph ){    
     return stringify(graph)
 }

@@ -24,4 +24,8 @@ deno task example-reading
 deno task example-writing
 ```
 
+```sh
+deno task example-minify
+```
+
 <br>
