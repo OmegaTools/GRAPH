@@ -1,13 +1,10 @@
 
 <br>
 
-<div align = center>
-
 [![Badge Commit]][GitHub]   
 [![Badge License]][License]   
 [![Badge Stars]][GitHub]
 
-<br>
 <br>
 
 # GRAPH
@@ -26,15 +23,13 @@
 
 <br>
 
-```JavaScript
+```js
 import * as Graph from 'https://deno.land/x/graph/mod.ts';
 ```
 
-</div>
-
 <br>
 
-```JavaScript
+```js
 const text = await Deno.readTextFile('Example.graph');
 
 const graph = Graph.parse(text);
@@ -42,7 +37,7 @@ const graph = Graph.parse(text);
 
 <br>
 
-```JavaScript
+```js
 const text = Graph.stringify(graph);
 
 await Deno.writeTextFile('Example.graph',text);
