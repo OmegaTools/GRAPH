@@ -1,5 +1,5 @@
 
-import { printify } from './Stringify.js'
+import stringify from './Stringify/Prettify.js'
 
 
 const 
@@ -137,7 +137,7 @@ export default class Node {
      */
      
     toString (){
-        return printify(this);
+        return stringify(this,{ printRoot : true });
     }
     
     
