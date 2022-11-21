@@ -16,7 +16,7 @@
 
 # GRAPH
 
-*Encoder / Decoder for  `.graph` files.*
+*Encoder / Decoder for [.graph] files.*
 
 <br>
 
@@ -62,6 +62,7 @@ await Deno.writeTextFile('Example.graph',text);
 [License]: LICENSE
 [#]: #
 
+[.graph]: https://github.com/temper-studios/graph-file-format
 [Deno]: https://deno.land/x/graph
 
 
